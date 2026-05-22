@@ -1,0 +1,36 @@
+{
+    "usuarios": [
+        {
+            "id": "0000",
+            "Nombres": "Admin",
+            "Apellidos": "Administrador",
+            "Telefono": "555 000111",
+            "email": "admin@acmesolutions.com",
+            "direccion": "Cl 185 # 26 \u2013 85",
+            "contrase\u00f1a": "admin123",
+            "rol": "administrador"
+        },
+        {
+            "id": "1234",
+            "Nombres": "Operario",
+            "Apellidos": "Operario",
+            "Telefono": "555 000222",
+            "email": "Operario@acmesolutions.com",
+            "direccion": "Cl 185 # 26 \u2013 85",
+            "contrase\u00f1a": "op1234",
+            "rol": "operario"
+        }
+    ],
+    "contactos": [
+        {
+            "id": "222",
+            "Nombres": "",
+            "Apellidos": "",
+            "Telefono": "",
+            "email": "",
+            "direccion": "",
+            "tipo": "",
+            "notas": ""
+        }
+    ]
+}
