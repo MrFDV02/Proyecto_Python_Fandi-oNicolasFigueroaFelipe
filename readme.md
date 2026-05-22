@@ -99,6 +99,15 @@ PERMISOS ESCENCIALES A QUIENES LO REQUIERAN.
         ══════════════════════════════
 
 
+°USUARIOS: Por defecto se requiere Adminitrador como usuario se gestion global, sin embargo se agrega usuario de Operario Master para el test del programa
+
+##Admin
+Correo: admin@acmesolutions.com
+Contraseña: admin123
+
+##Operarop
+
+
  -----------
 |INSTALACION|
  -----------
