@@ -75,13 +75,13 @@ PERMISOS ESCENCIALES A QUIENES LO REQUIERAN.
 
 °Gestion de usuarios (Admin): Crea nuevos usuarios de forma instantánea con los permisos requeridos:
 
-     ▄██████▄ 
-    ██████████
-    ██  ▄▄  ██    █▀▀█ █▀▀▄ █▀▄▀█ ▀█▀ █▄  █
-    ██  ██  ██    █▄▄█ █  █ █ █ █  █  █ █ █
-    ██  ▀▀  ██    ▀  ▀ ▀▀▀  ▀   ▀ ▀▀▀ ▀  ▀▀
-    ▀██▄▄▄▄██▀   ───────────────────────────
-      ▀████▀     >> SESIÓN DE ADMINISTRADOR
+               ▄██████▄ 
+              ██████████
+              ██  ▄▄  ██    █▀▀█ █▀▀▄ █▀▄▀█ ▀█▀ █▄  █
+              ██  ██  ██    █▄▄█ █  █ █ █ █  █  █ █ █
+              ██  ▀▀  ██    ▀  ▀ ▀▀▀  ▀   ▀ ▀▀▀ ▀  ▀▀
+              ▀██▄▄▄▄██▀   ───────────────────────────
+                ▀████▀     >> SESIÓN DE ADMINISTRADOR
 
 
 °Salir: Garantiza el cierre de sesion de forma correcta:
