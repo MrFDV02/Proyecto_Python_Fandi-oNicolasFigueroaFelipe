@@ -110,7 +110,7 @@ git clone https://github.com/MrFDV02/Proyecto_Python_Fandi-oNicolasFigueroaFelip
 python3 app.py
 
 
-##REQUERIMIENTOS
+##REQUERIMIENTOS:
 Seguridad y Acceso
 Registro de Usuarios
 Gestión de Contactos y Usuarios(CRUD)
