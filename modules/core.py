@@ -146,9 +146,10 @@ def menu_principal(usuario):
             confirmar = input(ELIMINACION_CONFIRMAR)
             if confirmar == "s":
                 borrar_pantalla()
-                resultado = eliminar_contacto(id)  # ← guarda aquí
+                resultado = eliminar_contacto(id) 
                 borrar_pantalla()
-                print(resultado)  # ← muestra el resultado
+                print(LETRERO_BORRAR)
+                print(resultado)  
                 pausar_pantalla()
                 borrar_pantalla()   
             else:
