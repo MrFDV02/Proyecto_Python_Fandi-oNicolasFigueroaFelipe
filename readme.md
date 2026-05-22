@@ -111,10 +111,10 @@ python3 app.py
 
 
 ##REQUERIMIENTOS:
-Seguridad y Acceso
-Registro de Usuarios
-Gestión de Contactos y Usuarios(CRUD)
-Estructura de Archivo
+Seguridad y Acceso,
+Registro de Usuarios,
+Gestión de Contactos y Usuarios(CRUD),
+Estructura de Archivo,
 
 
 ##AUTOR
