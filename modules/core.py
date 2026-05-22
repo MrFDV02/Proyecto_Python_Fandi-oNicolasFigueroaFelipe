@@ -148,7 +148,7 @@ def menu_principal(usuario):
                 borrar_pantalla()
                 resultado = eliminar_contacto(id) 
                 borrar_pantalla()
-                print(LETRERO_BORRAR)
+                print(CONTACTO_ELIMINADO)
                 print(resultado)  
                 pausar_pantalla()
                 borrar_pantalla()   
