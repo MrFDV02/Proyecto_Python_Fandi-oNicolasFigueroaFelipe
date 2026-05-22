@@ -114,7 +114,7 @@ python3 app.py
 Seguridad y Acceso,
 Registro de Usuarios,
 Gestión de Contactos y Usuarios(CRUD),
-Estructura de Archivo,
+Estructura de Archivo.
 
 
 ##AUTOR
