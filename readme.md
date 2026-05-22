@@ -105,7 +105,9 @@ PERMISOS ESCENCIALES A QUIENES LO REQUIERAN.
 Correo: admin@acmesolutions.com
 Contraseña: admin123
 
-##Operarop
+##Operario:
+Correo: operario@acmesolutions.com
+Contraseña: op1234
 
 
  -----------
