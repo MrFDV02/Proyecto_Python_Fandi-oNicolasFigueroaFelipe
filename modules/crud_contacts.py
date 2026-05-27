@@ -62,3 +62,12 @@ def eliminar_contacto(id):
             guardar_datos(datos)
             return "Contacto eliminado exitosamente."
     return "Contacto no encontrado."
+
+
+def buscar_contacto_por_id(id):
+    datos = cargar_datos
+    for contacto in datos["contactos"]:
+        if contacto ["id"] == id:
+            return contacto
+    return None
+

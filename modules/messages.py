@@ -15,6 +15,7 @@ Seleccione la operación a realizar:
 4. Actualizar contacto
 5. Eliminar contacto
 6. Gestion de usuarios
+7. Auditoria de usuarios y contactos
 0. Salir
 
 INGRESE EL NUMERO DE LA OPCIÓN: """
@@ -160,3 +161,14 @@ LETRERO_BORRAR = """
                ▀██████▀ 
 """
 
+LETRERO_AUDITORIA = """
+
+      ▄██████▄ 
+     ▄██████████▄ 
+    ██████▀▀██████       █▀▀█ █  █ █▀▀▄ █ ▀█▀ █▀▀█ █▀▀█
+    ████▀  ▄ █████       █▄▄█ █  █ █  █ █  █  █  █ █▄▄▀
+    ███  ▄██ █████       ▀  ▀ ▀▀▀▀ ▀▀▀  ▀  ▀  ▀▀▀▀ ▀ ▀▀
+    ██████▀  ▀████      ──────────────────────────────────
+     ▀██████▄▄ ███      >> AUDITOR
+       ▀██████▀ 
+"""

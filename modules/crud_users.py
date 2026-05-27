@@ -57,3 +57,11 @@ def actualizar_usuario(id, Nombres, Apellidos, Telefono, email, direccion, contr
             guardar_datos(datos)
             return "Usuario actualizado exitosamente."
     return "Usuario no encontrado."
+
+
+def buscar_usuario_por_id(id):
+    datos = cargar_datos()
+    for user in datos["usuarios"]:
+        if user["id"] == id:
+            return user
+    return None

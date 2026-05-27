@@ -127,6 +127,31 @@ Registro de Usuarios,
 Gestión de Contactos y Usuarios(CRUD),
 Estructura de Archivo.
 
+##ACTUALIZACION###
+
+Se ha integrado un nuevo módulo de auditoría al sistema, diseñado para validar la integridad de los datos de usuarios y contactos.
+
+     ▄██████▄ 
+     ▄██████████▄ 
+    ██████▀▀██████       █▀▀█ █  █ █▀▀▄ █ ▀█▀ █▀▀█ █▀▀█
+    ████▀  ▄ █████       █▄▄█ █  █ █  █ █  █  █  █ █▄▄▀
+    ███  ▄██ █████       ▀  ▀ ▀▀▀▀ ▀▀▀  ▀  ▀  ▀▀▀▀ ▀ ▀▀
+    ██████▀  ▀████      ──────────────────────────────────
+     ▀██████▄▄ ███      >> AUDITOR
+       ▀██████▀ 
+
+
+*Funcionalidad
+La función auditar_datos() realiza las siguientes verificaciones automáticamente:
+Validación de campos obligatorios: Asegura que todos los datos requeridos estén presentes.
+Validación de tipos de datos: Verifica que los números de teléfono sean válidos.
+Validación de formato: Comprueba que los correos electrónicos cumplan con el formato estándar.
+Control de integridad: Identifica usuarios y contactos con errores, generando un resumen único por cada entidad, evitando conteos duplicados.
+
+*Salida
+El proceso genera un archivo reporte_auditoria_datos.json que contiene:
+Listado detallado de errores encontrados.
+Resumen estadístico de la auditoría.
 
 ##AUTOR
 **Nicolas Felipe Fandiño Figueroa** - [GitHub Profile](https://github.com/MrFDV02)

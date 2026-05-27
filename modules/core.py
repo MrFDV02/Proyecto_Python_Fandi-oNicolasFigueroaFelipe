@@ -4,8 +4,10 @@ import time
 
 from modules.utils import cargar_datos, guardar_datos, borrar_pantalla, pausar_pantalla
 from modules.messages import *
-from modules.crud_users import buscar_usuario, registrar_usuario, eliminar_usuario, actualizar_usuario
-from modules.crud_contacts import registrar_contacto, listar_contactos, buscar_contacto, actualizar_contacto, eliminar_contacto
+from modules.crud_users import buscar_usuario, registrar_usuario, eliminar_usuario, actualizar_usuario, buscar_usuario_por_id
+from modules.crud_contacts import registrar_contacto, listar_contactos, buscar_contacto, actualizar_contacto, eliminar_contacto, buscar_contacto_por_id
+from modules.auditoria import auditar_datos
+
 
 borrar_pantalla()
 def login():
@@ -91,9 +93,9 @@ def menu_principal(usuario):
                     print(f"{'ID':<10} {'Nombres':<15} {'Apellidos':<15} {'Telefono':<15} {'Email':<20} {'Tipo':<10} {'Notas':<20}")
                     print("-" * 105)
                     for contacto in resultados: 
-                        print(f"{contacto['id']:<10} {contacto['Nombres']:<15} {contacto['Apellidos']:<15} {contacto['Telefono']:<15} {contacto['email']:<20} {contacto['tipo']:<10} {contacto['notas']:<20}")                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+                        print(f"{contacto['id']:<10} {contacto['Nombres']:<15} {contacto['Apellidos']:<15} {contacto['Telefono']:<15} {contacto['email']:<20} {contacto['tipo']:<10} {contacto['notas']:<20}")
                         pausar_pantalla()
-                        borrar_pantalla()
+
                 else:
                     print(MENSAJE_BUSCADOR)
                     print("No se encontraron contactos que coincidan con la búsqueda.")
@@ -111,12 +113,7 @@ def menu_principal(usuario):
                 pausar_pantalla()
                 borrar_pantalla()
                 continue
-            datos = cargar_datos()
-            contacto_encontrado = None
-            for contacto in datos["contactos"]:
-                if contacto["id"] == id:
-                    contacto_encontrado = contacto
-                    break
+            contacto_encontrado = buscar_contacto_por_id(id)
             if contacto_encontrado:
                 borrar_pantalla()
                 print(f"Contacto encontrado: {contacto_encontrado['Nombres']} {contacto_encontrado['Apellidos']}")
@@ -170,12 +167,7 @@ def menu_principal(usuario):
                         except ValueError:
                             print("El ID debe ser un número. Por favor, ingrese un ID válido.")
                             continue
-                        datos = cargar_datos()
-                        usuario_encontrado = None
-                        for user in datos["usuarios"]:
-                            if user["id"] == id:
-                                usuario_encontrado = user
-                                break
+                        usuario_encontrado = buscar_usuario_por_id(id)
                         if usuario_encontrado:
                             borrar_pantalla()
                             print("|| El ID ya está registrado. ||")
@@ -188,6 +180,9 @@ def menu_principal(usuario):
                             email = input("Ingrese el email: ")
                             direccion = input("Ingrese la dirección: ")
                             rol = input("Ingrese el rol (admin/operario): ")
+                            while rol not in ["admin", "operario"]:
+                                print("El rol debe ser 'admin' u 'operario'.")
+                                rol = input("Ingrese el rol (admin/operario): ")
                             contraseña = input("Ingrese la contraseña: ")
                             resultado = registrar_usuario(id, nombres, apellidos, telefono, email, direccion, contraseña, rol)
                             borrar_pantalla()
@@ -201,12 +196,7 @@ def menu_principal(usuario):
                         except ValueError:
                             print("El ID debe ser un número. Por favor, ingrese un ID válido.")
                             continue
-                        datos = cargar_datos()
-                        usuario_encontrado = None
-                        for user in datos["usuarios"]:
-                            if user["id"] == id:
-                                usuario_encontrado = user
-                                break
+                        usuario_encontrado = buscar_usuario_por_id(id)
                         if usuario_encontrado:
                             borrar_pantalla()
                             print(f"Usuario encontrado: {usuario_encontrado['Nombres']} {usuario_encontrado['Apellidos']}")
@@ -218,6 +208,9 @@ def menu_principal(usuario):
                             direccion = input("Ingrese la nueva dirección: ")
                             contraseña = input("Ingrese la nueva contraseña: ")
                             rol = input("Ingrese el nuevo rol: ")
+                            while rol not in ["admin", "operario"]:
+                                print("El rol debe ser 'admin' u 'operario'.")
+                                rol = input("Ingrese el nuevo rol: ")
                             resultado = actualizar_usuario(id, nombres, apellidos, telefono, email, direccion, contraseña, rol)
                             borrar_pantalla()
                             print(resultado)
@@ -267,7 +260,14 @@ def menu_principal(usuario):
             time.sleep(0.5)
             print("      [OFF] Sistema fuera de línea.")
             time.sleep(1)
-            exit()
+            exit() 
+
+        elif opcion == "7":
+            print(LETRERO_AUDITORIA)
+            auditar_datos()
+            pausar_pantalla()
+            borrar_pantalla()
+
         else:
             borrar_pantalla()                      
             print("Opción no válida. Por favor, ingrese una opción del menú.")

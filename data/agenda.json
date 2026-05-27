@@ -4,7 +4,7 @@
             "id": "0000",
             "Nombres": "Admin",
             "Apellidos": "Administrador",
-            "Telefono": "555 000111",
+            "Telefono": "555000111",
             "email": "admin@acmesolutions.com",
             "direccion": "Cl 185 # 26 \u2013 85",
             "contrase\u00f1a": "admin123",
@@ -14,12 +14,23 @@
             "id": "1234",
             "Nombres": "Operario",
             "Apellidos": "Operario",
-            "Telefono": "555 000222",
+            "Telefono": "555000222",
             "email": "operario@acmesolutions.com",
             "direccion": "Cl 185 # 26 \u2013 85",
             "contrase\u00f1a": "op1234",
             "rol": "operario"
         }
     ],
-    "contactos": []
+    "contactos": [
+        {
+            "id": "123",
+            "Nombres": "Jesus",
+            "Apellidos": "Andres",
+            "Telefono": "feo",
+            "email": "notiene@.com",
+            "direccion": "calle",
+            "tipo": "colaborador",
+            "notas": "feo"
+        }
+    ]
 }
